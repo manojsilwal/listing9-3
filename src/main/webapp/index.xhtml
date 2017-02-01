@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:composite="http://java.sun.com/jsf/composite"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:util="http://java.sun.com/jsf/composite/util">
+<h:head>
+<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	<util:login nameLabel="Name:" url="#{resource['images:link.jpg']}" passwordLabel="Password:" name="#{user.name}" password="#{user.password}" 
+	loginAction="#{user.login}" loginButtonText="login">
+		<f:validateLength maximum="10" minimum="4" for="inputs" />
+		<f:validateLength maximum="10" for="name"/>
+		<f:validator for="password" validatorId="com.jsfExample.Password" />
+	</util:login>
+	
+</h:body>
+</html>
